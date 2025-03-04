@@ -1,6 +1,12 @@
 \documentclass{article}
 \usepackage[a4paper,margin=1in]{geometry}
 \usepackage{titling}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=red
+}
+
 \usepackage{tikz}
 
 \title{Perceptual Interpreter: A Human-Centric Metric for Code Readability}
@@ -103,7 +109,7 @@ When similar content exists in short-term memory, humans tend to merge abstracti
         \node at (2,-2.25) {\verb|x| is 10, \verb|y| is 5, \verb|z| is 15};
         \node at (2,-4.5) {update memory};
 
-        \draw[->] (7.75, 0.25) --node[fill=white]{if not} (7.75 ,-3
+        \draw[->] (7.75, 0.25) --node[fill=white]{if not} (7.75 ,-3);
         \node at (7.75, -3.25) {no change in memory};
     \end{tikzpicture}
     \caption{Demo}
@@ -118,5 +124,11 @@ When similar content exists in short-term memory, humans tend to merge abstracti
 \ \\
 \textbf{[Week 8]}
 
+\ \\
+\textbf{[Additional Task]} Once human experts provide readability scores or preferences for disrupt code, we will attempt to train a neural network. This network will take as input the intermediate representations of the code at each layer of a specific LLM and output a readability score. The training data will come from human expert ratings or preferences to align with human perception. This idea is inspired by the LPIPS image similarity metric.\cite{zhang2018unreasonable}
 
+Theoretically, if the LLM has any ability to distinguish code readability at any level and reflects it in any layer, this neural network should be able to capture and adjust based on the LLM’s judgment, ultimately providing an easily interpretable readability score.
+
+\bibliographystyle{plain}
+\bibliography{references}
 \end{document}
